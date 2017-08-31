@@ -15,7 +15,13 @@ namespace AlloMoun
 
         protected override void OnCreate(Bundle bundle)
         {
+            //LocationManager _locMgr;
+
+            //_locMgr = GetSystemService(Context.LocationService) as
+            //LocationManager;
+
             base.OnCreate(bundle);
+
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
@@ -23,8 +29,11 @@ namespace AlloMoun
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.MyButton);
-
+            Button button1 = FindViewById<Button>(Resource.Id.button9);
+            Android.Widget.TextView Text = FindViewById<Android.Widget.TextView>(Resource.Id.editText1);
             button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            button1.Click += delegate { Text.Text = string.Format("Bonjou tout moun"); };
+
         }
     }
 }
